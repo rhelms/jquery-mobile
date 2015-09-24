@@ -178,13 +178,17 @@ $.widget( "mobile.selectmenu", $.mobile.selectmenu, {
 		var selectId, popupId, dialogId, label, thisPage, isMultiple, menuId,
 			themeAttr, overlayTheme, overlayThemeAttr, dividerThemeAttr,
 			menuPage, listbox, list, header, headerTitle, menuPageContent,
-			menuPageClose, headerClose,
+			menuPageClose, headerClose, isRtl, ltr,
 			o = this.options;
 
 		if ( o.nativeMenu ) {
 			return this._super();
 		}
 
+		// LTR settings for the popup are inherited from the select, and place explicitly on the popup,
+		// because the popup is generated outside the scope of the widget
+		isRtl = this.isRtl();
+		ltr = isRtl ? "rtl" : "ltr";
 		selectId = this.selectId;
 		popupId = selectId + "-listbox";
 		dialogId = selectId + "-dialog";
@@ -197,14 +201,14 @@ $.widget( "mobile.selectmenu", $.mobile.selectmenu, {
 		overlayThemeAttr = overlayTheme ? ( " data-" + $.mobile.ns +
 			"overlay-theme='" + overlayTheme + "'" ) : "";
 		dividerThemeAttr = ( o.dividerTheme && isMultiple ) ? ( " data-" + $.mobile.ns + "divider-theme='" + o.dividerTheme + "'" ) : "";
-		menuPage = $( "<div data-" + $.mobile.ns + "role='dialog' class='ui-selectmenu' id='" + dialogId + "'" + themeAttr + overlayThemeAttr + ">" +
+		menuPage = $( "<div data-" + $.mobile.ns + "role='dialog' class='ui-selectmenu ui-" + ltr + "' dir='" + ltr + "' id='" + dialogId + "'" + themeAttr + overlayThemeAttr + ">" +
 			"<div data-" + $.mobile.ns + "role='header'>" +
-			"<div class='ui-title'></div>"+
-			"</div>"+
-			"<div data-" + $.mobile.ns + "role='content'></div>"+
+			"<div class='ui-title'></div>" +
+			"</div>" +
+			"<div data-" + $.mobile.ns + "role='content'></div>" +
 			"</div>" );
 		listbox = $( "<div" + themeAttr + overlayThemeAttr + " id='" + popupId +
-				"' class='ui-selectmenu'></div>" )
+				"' class='ui-selectmenu ui-" + ltr + "' dir='" + ltr + "'></div>" )
 			.insertAfter( this.select )
 			.popup();
 		list = $( "<ul class='ui-selectmenu-list' id='" + menuId + "' role='listbox' aria-labelledby='" + this.buttonId + "'" + themeAttr + dividerThemeAttr + "></ul>" ).appendTo( listbox );
@@ -216,7 +220,7 @@ $.widget( "mobile.selectmenu", $.mobile.selectmenu, {
 				"role": "button",
 				"text": o.closeText,
 				"href": "#",
-				"class": "ui-btn ui-corner-all ui-btn-left ui-btn-icon-notext ui-icon-delete"
+				"class": "ui-btn ui-corner-all ui-btn-" + ( isRtl ? "right" : "left" ) + " ui-btn-icon-notext ui-icon-delete"
 			}).appendTo( header );
 		}
 

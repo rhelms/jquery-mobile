@@ -142,6 +142,8 @@ label.ui-btn {
 
 .ui-btn-icon-left:after,
 .ui-btn-icon-right:after,
+.ui-btn-icon-start:after,
+.ui-btn-icon-end:after,
 .ui-btn-icon-top:after,
 .ui-btn-icon-bottom:after,
 .ui-btn-icon-notext:after {

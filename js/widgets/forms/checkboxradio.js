@@ -57,6 +57,8 @@ $.widget( "mobile.checkboxradio", $.extend( {
 			this.options.disabled = true;
 		}
 
+		o.iconpos = this.isRtl() ? "right" : "left";
+
 		o.iconpos = inheritAttr( input, "iconpos" ) ||
 			label.element.attr( "data-" + $.mobile.ns + "iconpos" ) || o.iconpos,
 

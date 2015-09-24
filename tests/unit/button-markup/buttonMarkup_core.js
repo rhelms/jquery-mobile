@@ -43,14 +43,18 @@
 		ok( $minicontrol.is('.ui-mini'), "Controlgroup has data attribute and recieves .ui-mini.");
 	});
 
-	test( "Ensure icon positioning defaults to left, and can be overridden with “data-iconpos”", function() {
+	test( "Ensure icon positioning defaults to start, and can be overridden with “data-iconpos”", function() {
 		var posdefault = $("#iconpos1"),
 			posleft = $("#iconpos2"),
-			posright = $("#iconpos3");
+			posright = $("#iconpos3"),
+			posstart = $("#iconpos4"),
+			posend = $("#iconpos5");
 
-		ok( posdefault.hasClass("ui-btn-icon-left"), "Button with unspecified icon position gets .ui-btn-icon-left" );
+		ok( posdefault.hasClass("ui-btn-icon-start"), "Button with unspecified icon position gets .ui-btn-icon-start" );
 		ok( posleft.hasClass("ui-btn-icon-left"), "Button with left icon positioning specified .ui-btn-icon-left" );
 		ok( posright.hasClass("ui-btn-icon-right"), "Button with right icon positioning specified .ui-btn-icon-right" );
+		ok( posstart.hasClass("ui-btn-icon-start"), "Button with start icon positioning specified .ui-btn-icon-start" );
+		ok( posend.hasClass("ui-btn-icon-end"), "Button with end icon positioning specified .ui-btn-icon-end" );
 
 	});
 

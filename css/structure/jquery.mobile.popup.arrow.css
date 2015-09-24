@@ -101,20 +101,32 @@
 	left: -4.142135623px;
 	top: 5.857864376px;
 }
+.ui-rtl .ui-popup-arrow-container.ui-popup-arrow-t .ui-popup-arrow {
+	right: -4.142135623px;
+}
 
 .ui-popup-arrow-container.ui-popup-arrow-b .ui-popup-arrow {
 	left: -4.142135623px;
 	top: -14.142135623px;
+}
+.ui-rtl .ui-popup-arrow-container.ui-popup-arrow-b .ui-popup-arrow {
+	right: -4.142135623px;
 }
 
 .ui-popup-arrow-container.ui-popup-arrow-l .ui-popup-arrow {
 	left: 5.857864376px;
 	top: -4.142135623px;
 }
+.ui-rtl .ui-popup-arrow-container.ui-popup-arrow-l .ui-popup-arrow {
+	right: 5.857864376px;
+}
 
 .ui-popup-arrow-container.ui-popup-arrow-r .ui-popup-arrow {
 	left: -14.142135623px;
 	top: -4.142135623px;
+}
+.ui-rtl .ui-popup-arrow-container.ui-popup-arrow-r .ui-popup-arrow {
+	right: -14.142135623px;
 }
 
 /* Fix rotation center for oldIE - see http://www.useragentman.com/IETransformsTranslator/ */
@@ -122,18 +134,35 @@
     margin-left: -5.857864376269049px;
     margin-top: -7.0710678118654755px;
 }
+.ui-rtl .ui-popup-arrow-container.ui-popup-arrow-t.ie .ui-popup-arrow {
+	margin-left: 0;
+	margin-right: -5.857864376269049px;
+}
+
 .ui-popup-arrow-container.ui-popup-arrow-b.ie .ui-popup-arrow {
     margin-left: -5.857864376269049px;
     margin-top: -4.142135623730951px;
 }
- 
+.ui-rtl .ui-popup-arrow-container.ui-popup-arrow-b.ie .ui-popup-arrow {
+	margin-left: 0;
+	margin-right: -5.857864376269049px;
+}
+
 .ui-popup-arrow-container.ui-popup-arrow-l.ie .ui-popup-arrow {
     margin-left: -7.0710678118654755px;
     margin-top: -5.857864376269049px;
 }
+.ui-rtl .ui-popup-arrow-container.ui-popup-arrow-l.ie .ui-popup-arrow {
+	margin-left: 0;
+	margin-right: -7.0710678118654755px;
+}
 .ui-popup-arrow-container.ui-popup-arrow-r.ie .ui-popup-arrow {
     margin-left: -4.142135623730951px;
     margin-top: -5.857864376269049px;
+}
+.ui-rtl .ui-popup-arrow-container.ui-popup-arrow-r.ie .ui-popup-arrow {
+	margin-left: 0;
+	margin-right: -4.142135623730951px;
 }
 
 /* structure */
@@ -150,6 +179,7 @@
 	position: absolute;
 }
 
+/* TODO RTL */
 .ui-popup-arrow {
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
@@ -160,6 +190,7 @@
 	box-sizing: border-box;
 }
 
+/* TODO RTL */
 .ui-popup-arrow-container.ie .ui-popup-arrow {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865474, M12=-0.7071067811865477, M21=0.7071067811865477, M22=0.7071067811865474, SizingMethod='auto expand')";
 	filter: progid:DXImageTransform.Microsoft.Matrix(

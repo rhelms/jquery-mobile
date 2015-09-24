@@ -34,6 +34,12 @@ input.ui-slider-input {
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 }
+.ui-rtl input.ui-slider-input {
+	float: right;
+}
+.ui-rtl .ui-ltr input.ui-slider-input {
+    float: left;
+}
 .ui-slider-input::-webkit-outer-spin-button,
 .ui-slider-input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
@@ -47,6 +53,12 @@ input.ui-slider-input {
 	height: 15px;
 	margin: 0 15px 0 68px;
 	top: 6px;
+}
+.ui-rtl .ui-slider-track {
+	margin: 0 68px 0 15px;
+}
+.ui-rtl .ui-ltr .ui-slider-track {
+    margin: 0 15px 0 68px;
 }
 .ui-slider-track.ui-mini {
 	height: 12px;
@@ -66,10 +78,22 @@ input.ui-slider-input {
 	outline: 0;
 	padding: 0;
 }
+.ui-rtl .ui-slider-track .ui-btn.ui-slider-handle {
+	margin: -15px -15px 0 0;
+}
+.ui-rtl .ui-ltr .ui-slider-track .ui-btn.ui-slider-handle {
+    margin: -15px 0 0 -15px;
+}
 .ui-slider-track.ui-mini .ui-slider-handle {
 	height: 14px;
 	width: 14px;
 	margin: -8px 0 0 -8px;
+}
+.ui-rtl .ui-slider-track.ui-mini .ui-slider-handle {
+	margin: -8px -8px 0 0;
+}
+.ui-rtl .ui-ltr .ui-slider-track.ui-mini .ui-slider-handle {
+    margin: -8px 0 0 -8px;
 }
 select.ui-slider-switch {
 	position: absolute !important;
@@ -102,8 +126,20 @@ div.ui-slider-switch.ui-mini {
 .ui-slider-switch.ui-mini .ui-slider-inneroffset {
 	margin: 0 15px 0 14px;
 }
+.ui-rtl .ui-slider-switch.ui-mini .ui-slider-inneroffset {
+	margin: 0 14px 0 15px;
+}
+.ui-rtl .ui-ltr .ui-slider-switch.ui-mini .ui-slider-inneroffset {
+    margin: 0 15px 0 14px;
+}
 .ui-slider-switch .ui-btn.ui-slider-handle {
 	margin: 1px 0 0 -15px;
+}
+.ui-rtl .ui-slider-switch .ui-btn.ui-slider-handle {
+	margin: 1px -15px 0 0;
+}
+.ui-rtl .ui-ltr .ui-slider-switch .ui-btn.ui-slider-handle {
+    margin: 1px 0 0 -15px;
 }
 .ui-slider-switch.ui-mini .ui-slider-handle {
 	width: 25px;
@@ -111,10 +147,26 @@ div.ui-slider-switch.ui-mini {
 	margin: 1px 0 0 -13px;
 	padding: 0;
 }
+.ui-rtl .ui-slider-switch.ui-mini .ui-slider-handle {
+	margin: 1px -13px 0 0;
+}
+.ui-rtl .ui-ltr .ui-slider-switch.ui-mini .ui-slider-handle {
+    margin: 1px 0 0 -13px;
+}
 .ui-slider-handle-snapping {
 	-webkit-transition: left 70ms linear;
 	-moz-transition: left 70ms linear;
 	transition: left 70ms linear;
+}
+.ui-rtl .ui-slider-handle-snapping {
+	-webkit-transition: right 70ms linear;
+	-moz-transition: right 70ms linear;
+	transition: right 70ms linear;
+}
+.ui-rtl .ui-ltr .ui-slider-handle-snapping {
+    -webkit-transition: left 70ms linear;
+    -moz-transition: left 70ms linear;
+    transition: left 70ms linear;
 }
 .ui-slider-switch .ui-slider-label {
 	position: absolute;
@@ -136,10 +188,26 @@ div.ui-slider-switch.ui-mini {
 	left: 0;
 	text-indent: -1.5em;
 }
+.ui-rtl .ui-slider-switch .ui-slider-label-a {
+	left: auto;
+	right: 0;
+}
+.ui-rtl .ui-ltr .ui-slider-switch .ui-slider-label-a {
+    left: 0;
+    right: auto;
+}
 .ui-slider-switch .ui-slider-label-b {
 	z-index: 0;
 	right: 0;
 	text-indent: 1.5em;
+}
+.ui-rtl .ui-slider-switch .ui-slider-label-b {
+	right: auto;
+	left: 0;
+}
+.ui-rtl .ui-ltr .ui-slider-switch .ui-slider-label-b {
+    right: 0;
+    left: auto;
 }
 /* The corner radii for ui-slider-switch/track can be specified in theme CSS. The bg and handle inherits. */
 .ui-slider-track .ui-slider-bg,

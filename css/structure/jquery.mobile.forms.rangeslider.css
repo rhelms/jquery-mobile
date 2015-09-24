@@ -12,6 +12,12 @@
 .ui-rangeslider .ui-slider-input.ui-rangeslider-last {
 	float: right;
 }
+.ui-rtl .ui-rangeslider .ui-slider-input.ui-rangeslider-last {
+	float: left;
+}
+.ui-rtl .ui-ltr .ui-rangeslider .ui-slider-input.ui-rangeslider-last {
+    float: right;
+}
 .ui-rangeslider .ui-rangeslider-sliders {
 	position: relative;
 	overflow: visible;

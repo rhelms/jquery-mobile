@@ -196,6 +196,61 @@
 <li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
 	<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
 		<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
+			Right to left<span class="ui-collapsible-heading-status"> click to expand contents</span>
+		</a>
+	</h3>
+	<div class="ui-collapsible-content ui-body-inherit ui-collapsible-content-collapsed" aria-hidden="true">
+		<ul>
+			<li data-filtertext="right to left rtl left to right ltr"><a href="../rtl/" data-ajax="false">Right To Left</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form button widget input button submit reset"><a href="../rtl-button/" data-ajax="false">RTL Button widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form checkboxradio widget checkbox input checkboxes controlgroups"><a href="../rtl-checkboxradio-checkbox/" data-ajax="false">RTL Checkbox widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form checkboxradio widget radio input radio buttons controlgroups"><a href="../rtl-checkboxradio-radio/" data-ajax="false">RTL Radio buttons widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr collapsibles content formatting"><a href="../rtl-collapsible/" data-ajax="false">RTL Collapsible widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr accordions collapsible set widget content formatting grouped collapsibles"><a href="../rtl-collapsibleset/" data-ajax="false">RTL Collapsible set widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr controlgroups selectmenu checkboxradio input grouped buttons horizontal vertical"><a href="../rtl-controlgroup/" data-ajax="false">RTL Controlgroup widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form flipswitch widget flip toggle switch binary select checkbox input"><a href="../rtl-flipswitch/" data-ajax="false">RTL Flipswitch widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr grids columns blocks content formatting rwd responsive css framework"><a href="../rtl-grids/" data-ajax="false">RTL Grids</a></li>
+			<li data-filtertext="right to left rtl left to right ltr blocks content formatting sections heading"><a href="../rtl-body-bar-classes/" data-ajax="false">RTL Grouping and dividing content</a></li>
+			<li data-filtertext="right to left rtl left to right ltr listview widget thumbnails icons nested split button collapsible ul ol"><a href="../rtl-listview/" data-ajax="false">RTL Listview widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr autodividers anchor jump scroll linkbars listview lists ul ol"><a href="../rtl-listview-autodividers-linkbar/" data-ajax="false">RTL Listview autodividers linkbar</a></li>
+            <li data-filtertext="right to left rtl left to right ltr listview collapsible list items flat"><a href="../rtl-listview-collapsible-item-flat/" data-ajax="false">RTL Listview collapsible list items (flat)</a></li>
+            <li data-filtertext="right to left rtl left to right ltr listview collapsible list indented"><a href="../rtl-listview-collapsible-item-indented/" data-ajax="false">RTL Listview collapsible list items (indented)</a></li>
+            <li data-filtertext="right to left rtl left to right ltr grid listview responsive grids responsive listviews lists ul"><a href="../rtl-listview-grid/" data-ajax="false">RTL Listview responsive grid</a></li>
+            <li data-filtertext="right to left rtl left to right ltr navbar widget navmenu toolbars header footer"><a href="../rtl-navbar/" data-ajax="false">RTL Navbar widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr panel widget sliding panels reveal push overlay responsive"><a href="../rtl-panel/" data-ajax="false">RTL Panel widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr panel external"><a href="../rtl-panel-external/" data-ajax="false">RTL Panel widget (external)</a></li>
+			<li data-filtertext="right to left rtl left to right ltr popup widget popups dialog modal transition tooltip lightbox form overlay screen flip pop fade transition"><a href="../rtl-popup/" data-ajax="false">RTL Popup</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form rangeslider widget dual sliders dual handle sliders range input"><a href="../rtl-rangeslider/" data-ajax="false">RTL Rangeslider widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form selectmenu widget select input custom select menu selects"><a href="../rtl-selectmenu/" data-ajax="false">RTL Select menu</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form custom select menu selectmenu widget custom menu option optgroup multiple selects"><a href="../rtl-selectmenu-custom/" data-ajax="false">RTL Custom select menu</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form slider widget range input single sliders"><a href="../rtl-slider/" data-ajax="false">RTL Slider widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form slider widget flipswitch slider binary select flip toggle switch"><a href="../rtl-slider-flipswitch/" data-ajax="false">RTL Slider flip toggle switch</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form slider tooltip handle value input range sliders"><a href="../rtl-slider-tooltip/" data-ajax="false">RTL Slider tooltip</a></li>
+			<li data-filtertext="right to left rtl left to right ltr table widget reflow column toggle th td responsive tables rwd hide show tabular"><a href="../rtl-table-column-toggle/" data-ajax="false">RTL Table Column Toggle</a></li>
+			<li data-filtertext="right to left rtl left to right ltr table column toggle phone comparison demo"><a href="../rtl-table-column-toggle-example/" data-ajax="false">RTL Table Column Toggle demo</a></li>
+			<li data-filtertext="right to left rtl left to right ltr responsive tables table column toggle heading groups rwd breakpoint"><a href="../rtl-table-column-toggle-heading-groups/" data-ajax="false">RTL Table Column Toggle heading groups</a></li>
+			<li data-filtertext="right to left rtl left to right ltr table reflow th td responsive rwd columns tabular"><a href="../rtl-table-reflow/" data-ajax="false">RTL Table Reflow</a></li>
+			<li data-filtertext="right to left rtl left to right ltr responsive tables table reflow heading groups rwd breakpoint"><a href="../rtl-table-reflow-heading-groups/" data-ajax="false">RTL Table Reflow heading groups</a></li>
+			<li data-filtertext="right to left rtl left to right ltr responsive tables table reflow stack custom styles"><a href="../rtl-table-reflow-styling/" data-ajax="false">RTL Table Reflow custom styles</a></li>
+			<li data-filtertext="right to left rtl left to right ltr ui tabs widget"><a href="../rtl-tabs/" data-ajax="false">RTL Tabs widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form textinput widget text input textarea number date time tel email file color password"><a href="../rtl-textinput/" data-ajax="false">RTL Textinput widget</a></li>
+			<li data-filtertext="right to left rtl left to right ltr default theme swatches theming style css"><a href="../rtl-theme-default/" data-ajax="false">RTL Default theme</a></li>
+			<li data-filtertext="right to left rtl left to right ltr toolbar widget header footer toolbars fixed fullscreen external sections"><a href="../rtl-toolbar/" data-ajax="false">RTL Toolbar</a></li>
+			<li data-filtertext="right to left rtl left to right ltr dynamic toolbars dynamically add toolbar header footer"><a href="../rtl-toolbar-dynamic/" data-ajax="false">RTL Dynamic toolbars</a></li>
+			<li data-filtertext="right to left rtl left to right ltr external toolbars header footer"><a href="../rtl-toolbar-external/" data-ajax="false">RTL External toolbars</a></li>
+			<li data-filtertext="right to left rtl left to right ltr fixed toolbars header footer"><a href="../rtl-toolbar-fixed/" data-ajax="false">RTL Fixed toolbars</a></li>
+			<li data-filtertext="right to left rtl left to right ltr fixed fullscreen toolbars header footer"><a href="../rtl-toolbar-fixed-fullscreen/" data-ajax="false">RTL Fullscreen toolbars</a></li>
+			<li data-filtertext="right to left rtl left to right ltr external fixed toolbars header footer"><a href="../rtl-toolbar-fixed-external/" data-ajax="false">RTL Fixed external toolbars</a></li>
+			<li data-filtertext="right to left rtl left to right ltr external persistent toolbars header footer navbar navmenu"><a href="../rtl-toolbar-fixed-persistent/" data-ajax="false">RTL Persistent toolbars</a></li>
+			<li data-filtertext="right to left rtl left to right ltr external ajax optimized toolbars persistent toolbars header footer navbar"><a href="../rtl-toolbar-fixed-persistent-optimized/" data-ajax="false">RTL Ajax optimized toolbars</a></li>
+			<li data-filtertext="right to left rtl left to right ltr form in toolbars header footer"><a href="../rtl-toolbar-fixed-forms/" data-ajax="false">RTL Form in toolbar</a></li>
+		</ul>
+	</div>
+</li>
+
+<li data-role="collapsible" data-enhanced="true" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false" class="ui-collapsible ui-collapsible-themed-content ui-collapsible-collapsed">
+	<h3 class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+		<a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-icon-right ui-btn-inherit ui-icon-carat-d">
 			Selectmenu widget<span class="ui-collapsible-heading-status"> click to expand contents</span>
 		</a>
 	</h3>

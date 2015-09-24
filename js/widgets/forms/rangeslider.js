@@ -37,7 +37,7 @@ define( [ "jquery",
 			_sliderFirst = _sliderWidgetFirst.slider,
 			_sliderLast = _sliderWidgetLast.slider,
 			firstHandle = _sliderWidgetFirst.handle,
-			_sliders = $( "<div class='ui-rangeslider-sliders' />" ).appendTo( $el );
+			_sliders = $( "<div class='ui-rangeslider-sliders' />" ).appendTo( $el);
 
 			_inputFirst.addClass( "ui-rangeslider-first" );
 			_inputLast.addClass( "ui-rangeslider-last" );
@@ -224,14 +224,24 @@ define( [ "jquery",
 		},
 
 		_updateHighlight: function() {
-			var min = parseInt( $.data( this._inputFirst.get(0), "mobile-slider" ).handle.get(0).style.left, 10 ),
-				max = parseInt( $.data( this._inputLast.get(0), "mobile-slider" ).handle.get(0).style.left, 10 ),
+			var isRtl = this.isRtl(),
+                firstStyle = $.data( this._inputFirst.get(0), "mobile-slider" ).handle.get(0).style,
+                lastStyle = $.data( this._inputLast.get(0), "mobile-slider" ).handle.get(0).style,
+                min = parseInt( isRtl ? firstStyle.right : firstStyle.left, 10 ),
+				max = parseInt( isRtl ? lastStyle.right : lastStyle.left, 10 ),
 				width = (max - min);
 
-			this.element.find( ".ui-slider-bg" ).css({
-				"margin-left": min + "%",
-				"width": width + "%"
-			});
+            if (isRtl) {
+                this.element.find(".ui-slider-bg").css({
+                    "margin-right": min + "%",
+                    "width": width + "%"
+                });
+            } else {
+                this.element.find(".ui-slider-bg").css({
+                    "margin-left": min + "%",
+                    "width": width + "%"
+                });
+            }
 		},
 
 		_setTheme: function( value ) {

@@ -26,6 +26,14 @@
 	padding-left: 4em;  /* Override this and width in previous rule if you use labels other than "on/off" and need more space */
 	width: 1.875em;
 }
+.ui-rtl .ui-flipswitch.ui-flipswitch-active {
+	padding-left: 0;
+	padding-right: 4em;  /* Override this and width in previous rule if you use labels other than "on/off" and need more space */
+}
+.ui-rtl .ui-ltr .ui-flipswitch.ui-flipswitch-active {
+	padding-left: 4em; /* Override this and width in previous rule if you use labels other than "on/off" and need more space */
+	padding-right: 0;
+}
 .ui-flipswitch-input {
 	position: absolute;
 	height: 1px;
@@ -45,6 +53,14 @@
 	margin: .0625em;
 	line-height: 1.65em;
 }
+.ui-rtl .ui-flipswitch .ui-btn.ui-flipswitch-on,
+.ui-rtl .ui-flipswitch .ui-flipswitch-off {
+	float: right;
+}
+.ui-rtl .ui-ltr .ui-flipswitch .ui-btn.ui-flipswitch-on,
+.ui-rtl .ui-ltr .ui-flipswitch .ui-flipswitch-off {
+	float: left;
+}
 .ui-flipswitch .ui-btn.ui-flipswitch-on {
 	width: 1.75em;
 	padding: 0;
@@ -59,6 +75,12 @@
 	overflow: visible;
 	color: inherit;
 	text-shadow: inherit;
+}
+.ui-rtl .ui-flipswitch .ui-btn.ui-flipswitch-on {
+	text-align: right;
+}
+.ui-rtl .ui-ltr .ui-flipswitch .ui-btn.ui-flipswitch-on {
+	text-align: left;
 }
 .ui-flipswitch .ui-flipswitch-off {
 	padding: 1px;

@@ -106,7 +106,11 @@ $.widget( "mobile.collapsible", {
 				null;
 
 			if ( null == options[ key ] ) {
-				options[ key ] = $.mobile.collapsible.defaults[ key ];
+				if ( key === "iconpos" ) {
+					options[key] = this.isRtl() ? "right" : "left";
+				} else {
+					options[key] = $.mobile.collapsible.defaults[key];
+				}
 			}
 		}
 

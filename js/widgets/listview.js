@@ -93,7 +93,9 @@ $.widget( "mobile.listview", $.extend( {
 			itemClassDict = {},
 			countBubbles = $list.find( ".ui-li-count" ),
 			countTheme = getAttr( $list[ 0 ], "counttheme" ) || this.options.countTheme,
-			countThemeClass = countTheme ? "ui-body-" + countTheme : "ui-body-inherit";
+			countThemeClass = countTheme ? "ui-body-" + countTheme : "ui-body-inherit",
+            buttonIconClass = "ui-btn-icon-right",
+			rightShortSuffix = "-r";
 
 		if ( o.theme ) {
 			$list.addClass( "ui-group-theme-" + o.theme );
@@ -108,6 +110,17 @@ $.widget( "mobile.listview", $.extend( {
 		this._beforeListviewRefresh();
 
 		li = this._getChildrenByTagName( $list[ 0 ], "li", "LI" );
+
+		if ( this.isRtl() ) {
+			if ( o.icon.indexOf( rightShortSuffix, o.icon.length - rightShortSuffix.length ) !== -1 )
+			{
+				o.icon = "carat-l";
+			}
+			if ( o.splitIcon.indexOf( rightShortSuffix, o.splitIcon.length - rightShortSuffix.length ) !== -1 ) {
+				o.splitIcon = "carat-l";
+			}
+			buttonIconClass = "ui-btn-icon-left";
+		}
 
 		for ( pos = 0, numli = li.length; pos < numli; pos++ ) {
 			item = li.eq( pos );
@@ -149,7 +162,7 @@ $.widget( "mobile.listview", $.extend( {
 						// Reduce to the first anchor, because only the first gets the buttonClass
 						a = a.first();
 					} else if ( icon ) {
-						buttonClass += " ui-btn-icon-right ui-icon-" + icon;
+						buttonClass += " " + buttonIconClass + " ui-icon-" + icon;
 					}
 
 					// Apply buttonClass to the (first) anchor

@@ -72,7 +72,7 @@
              <label for="number-3">Number + pattern: data-clear-btn="false"</label>
              <input type="number" data-clear-btn="false" name="number-3" pattern="[0-9]*" id="number-3" value="">
 
-             <label for="number-2">Number + pattern: data-clear-btn="true"</label>
+             <label for="number-4">Number + pattern: data-clear-btn="true"</label>
              <input type="number" data-clear-btn="true" name="number-4" pattern="[0-9]*" id="number-4" value="">
         </form>
         </div><!-- /demo-html -->

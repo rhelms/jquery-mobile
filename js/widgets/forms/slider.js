@@ -237,7 +237,8 @@ $.widget( "mobile.slider", $.extend( {
 	},
 
 	_handleKeydown: function( event ) {
-		var index = this._value();
+		var index = this._value(),
+			directionMultiplier = 1;
 		if ( this.options.disabled ) {
 			return;
 		}
@@ -263,6 +264,9 @@ $.widget( "mobile.slider", $.extend( {
 		}
 
 		// move the slider according to the keypress
+		if ( this.isRtl() ) {
+			directionMultiplier = -1;
+		}
 		switch ( event.keyCode ) {
 			case $.mobile.keyCode.HOME:
 				this.refresh( this.min );
@@ -272,13 +276,17 @@ $.widget( "mobile.slider", $.extend( {
 				break;
 			case $.mobile.keyCode.PAGE_UP:
 			case $.mobile.keyCode.UP:
-			case $.mobile.keyCode.RIGHT:
 				this.refresh( index + this.step );
+				break;
+			case $.mobile.keyCode.RIGHT:
+				this.refresh( index + ( this.step * directionMultiplier ) );
 				break;
 			case $.mobile.keyCode.PAGE_DOWN:
 			case $.mobile.keyCode.DOWN:
-			case $.mobile.keyCode.LEFT:
 				this.refresh( index - this.step );
+				break;
+			case $.mobile.keyCode.LEFT:
+				this.refresh( index - ( this.step * directionMultiplier ) );
 				break;
 		}
 	}, // remove active mark
@@ -437,6 +445,10 @@ $.widget( "mobile.slider", $.extend( {
 			} else {
 				percent = Math.round( ( ( data.pageX - left ) / width ) * 100 );
 			}
+
+			if ( this.isRtl() ) {
+				percent = 100 - percent;
+			}
 		} else {
 			if ( val == null ) {
 				val = isInput ? parseFloat( control.val() || 0 ) : control[0].selectedIndex;
@@ -485,7 +497,7 @@ $.widget( "mobile.slider", $.extend( {
 			newval = max;
 		}
 
-		this.handle.css( "left", percent + "%" );
+		this.handle.css( this.isRtl() ? "right" : "left", percent + "%" );
 
 		this.handle[0].setAttribute( "aria-valuenow", isInput ? newval : optionElements.eq( newval ).attr( "value" ) );
 

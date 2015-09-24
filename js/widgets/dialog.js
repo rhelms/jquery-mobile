@@ -16,7 +16,7 @@ $.widget( "mobile.dialog", {
 	options: {
 
 		// Accepts left, right and none
-		closeBtn: "left",
+		closeBtn: function( element ) { return $.isRtl( element ) ? "right" : "left"; },
 		closeBtnText: "Close",
 		overlayTheme: "a",
 		corners: true
@@ -59,6 +59,10 @@ $.widget( "mobile.dialog", {
 		var elem = this.element,
 			opts = this.options;
 
+		if ( typeof(opts.closeBtn) === "function" ) {
+			opts.closeBtn = opts.closeBtn( this.element );
+		}
+
 		// Class the markup for dialog styling and wrap interior
 		elem.addClass( "ui-dialog" )
 			.wrapInner( $( "<div/>", {
@@ -88,6 +92,10 @@ $.widget( "mobile.dialog", {
 	_setOptions: function( options ) {
 		var closeButtonLocation, closeButtonText,
 			currentOpts = this.options;
+
+		if ( typeof(currentOpts.closeBtn) === "function" ) {
+			currentOpts.closeBtn = currentOpts.closeBtn( this.element );
+		}
 
 		if ( options.corners !== undefined ) {
 			this._inner.toggleClass( "ui-corner-all", !!options.corners );

@@ -103,7 +103,7 @@ $.widget( "mobile.selectmenu", $.extend( {
 
 			options = this.options,
 
-			iconpos = options.icon ? ( options.iconpos || this.select.jqmData( "iconpos" ) ) : false,
+			iconpos = options.icon ? ( this.select.jqmData( "iconpos" ) || ( this.isRtl() ? "left" : "right" ) ) : false,
 
 			button = this.button
 				.insertBefore( this.select )

@@ -25,6 +25,15 @@
 	margin: 0;
 	border-right-width: 0;
 }
+
+.ui-rtl .ui-navbar li:first-child .ui-btn {
+    border-right-width: 1px;
+}
+
+.ui-rtl .ui-ltr .ui-navbar li:first-child .ui-btn {
+    border-right-width: 0;
+}
+
 .ui-header .ui-navbar li button.ui-btn,
 .ui-footer .ui-navbar li button.ui-btn {
 	margin: 0;
@@ -35,18 +44,61 @@
 }
 
 /* fixes gaps caused by subpixel problem */
-.ui-navbar li:last-child .ui-btn {
+.ui-navbar li:last-child .ui-btn,
+.ui-rtl .ui-ltr .ui-navbar li:last-child .ui-btn {
 	margin-right: -4px;
 }
-.ui-navbar li:last-child .ui-btn:after {
+
+.ui-rtl .ui-navbar li:last-child .ui-btn {
+    margin-right: 0;
+}
+
+.ui-navbar li:last-child .ui-btn:after,
+.ui-rtl .ui-ltr .ui-navbar li:last-child .ui-btn:after{
 	margin-right: 4px;
 }
 
+.ui-rtl .ui-navbar li:last-child .ui-btn:after {
+    margin-right: 0;
+}
+
 .ui-content .ui-navbar li:last-child .ui-btn,
-.ui-content .ui-navbar .ui-grid-duo .ui-block-b .ui-btn {
+.ui-rtl .ui-content .ui-navbar li:first-child .ui-btn,
+.ui-content .ui-rtl .ui-navbar li:first-child .ui-btn,
+.ui-content .ui-navbar .ui-grid-duo .ui-block-b .ui-btn,
+.ui-rtl .ui-content .ui-navbar .ui-grid-duo .ui-block-a .ui-btn,
+.ui-content .ui-rtl .ui-navbar .ui-grid-duo .ui-block-a .ui-btn {
 	border-right-width: 1px;
 	margin-right: 0;
 }
+
+.ui-rtl .ui-content .ui-navbar li:last-child .ui-btn,
+.ui-content .ui-rtl .ui-navbar li:last-child .ui-btn,
+.ui-rtl .ui-ltr .ui-content .ui-navbar li:first-child .ui-btn,
+.ui-content .ui-rtl .ui-ltr .ui-navbar li:first-child .ui-btn {
+    border-right-width: 0;
+}
+
+.ui-rtl .ui-ltr .ui-content .ui-navbar li:last-child .ui-btn,
+.ui-content .ui-rtl .ui-ltr  .ui-navbar li:last-child .ui-btn{
+    border-right-width: 1px;
+}
+
+.ui-rtl .ui-content .ui-navbar .ui-grid-duo .ui-block-b .ui-btn,
+.ui-content .ui-rtl .ui-navbar .ui-grid-duo .ui-block-b .ui-btn {
+    border-right-width: 0;
+}
+
+.ui-rtl .ui-ltr .ui-content .ui-navbar .ui-grid-duo .ui-block-b .ui-btn,
+.ui-content .ui-rtl .ui-ltr .ui-navbar .ui-grid-duo .ui-block-b .ui-btn {
+    border-right-width: 1px;
+}
+
+.ui-rtl .ui-ltr .ui-content .ui-navbar .ui-grid-duo .ui-block-a .ui-btn,
+.ui-content .ui-rtl .ui-ltr .ui-navbar .ui-grid-duo .ui-block-a .ui-btn {
+    border-right-width: 0;
+}
+
 .ui-content .ui-navbar li:last-child .ui-btn:after,
 .ui-content .ui-navbar .ui-grid-duo .ui-block-b .ui-btn:after {
 	margin-right: 0;

@@ -93,11 +93,13 @@ $.widget( "mobile.table", $.mobile.table, {
 
 				// Make sure the (new?) checkbox is associated with its header via .jqmData() and
 				// that, vice versa, the header is also associated with the checkbox
+				// ensure label had ui-rtl indicator, so checkbox is created with correct rtl properties
 				input = ( keep ? inputs.eq( checkboxIndex++ ) :
 					$("<label><input type='checkbox' checked />" +
 						( header.children( "abbr" ).first().attr( "title" ) ||
 							header.text() ) +
 						"</label>" )
+						.addClass( $.isRtl( header ) ? "ui-rtl" : "" )
 						.appendTo( container )
 						.children( 0 )
 						.checkboxradio( {
@@ -147,6 +149,9 @@ $.widget( "mobile.table", $.mobile.table, {
 			" ui-corner-all ui-shadow ui-mini' " +
 			"data-" + ns + "rel='popup'>" + opts.columnBtnText + "</a>" );
 		popup = $( "<div class='" + opts.classes.popup + "' id='" + id + "'></div>" );
+		if ($.isRtl( table )) {
+			popup.addClass( "ui-rtl" ).attr( "dir", "rtl" );
+		}
 		menu = $( "<fieldset></fieldset>" ).controlgroup();
 
 		// set extension here, send "false" to trigger build/rebuild

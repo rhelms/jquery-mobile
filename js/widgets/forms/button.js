@@ -32,6 +32,8 @@ $.widget( "mobile.button", {
 			this.options.disabled = true;
 		}
 
+		this.options.iconpos = this.isRtl() ? "right" : "left";
+
 		if ( !this.options.enhanced ) {
 			this._enhance();
 		}

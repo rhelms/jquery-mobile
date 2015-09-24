@@ -334,6 +334,11 @@ define( [ "jquery", "./jquery.mobile.ns", "jquery-ui/jquery.ui.core" ], function
 		return $.find( expr, null, null, [ node ] ).length > 0;
 	};
 
+	$.isRtl = function( nativeElement ) {
+		var element = $( nativeElement );
+		return element.closest( ".ui-rtl,.ui-ltr").hasClass( "ui-rtl" );
+	};
+
 })( jQuery, this );
 //>>excludeStart("jqmBuildExclude", pragmas.jqmBuildExclude);
 });

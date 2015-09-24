@@ -30,6 +30,15 @@ textarea.ui-input-text {
 	-webkit-border-radius: inherit;
 	border-radius: inherit;
 }
+.ui-rtl .ui-input-text input,
+.ui-rtl .ui-input-search input {
+	text-align: right;
+}
+.ui-rtl .ui-ltr .ui-input-text input,
+.ui-rtl .ui-ltr .ui-input-search input {
+	text-align: left;
+}
+
 textarea.ui-input-text {
 	overflow: auto;
 	resize: vertical;
@@ -55,8 +64,24 @@ textarea.ui-mini {
 .ui-input-has-clear {
 	padding-right: 2.375em;
 }
+.ui-rtl .ui-input-has-clear {
+	padding-right: 0;
+	padding-left: 2.375em;
+}
+.ui-rtl .ui-ltr .ui-input-has-clear {
+	padding-right: 2.375em;
+	padding-left: 0;
+}
 .ui-mini.ui-input-has-clear {
 	padding-right: 2.923em;
+}
+.ui-rtl .ui-mini.ui-input-has-clear {
+	padding-right: 0;
+	padding-left: 2.923em;
+}
+.ui-rtl .ui-ltr .ui-mini.ui-input-has-clear {
+	padding-right: 2.923em;
+	padding-left: 0;
 }
 .ui-input-has-clear input {
 	padding-right: 0;
@@ -66,9 +91,25 @@ textarea.ui-mini {
 	-webkit-border-bottom-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
+.ui-rtl .ui-input-has-clear input {
+	padding-right: .4em;
+	padding-left: 0;
+}
+.ui-rtl .ui-ltr .ui-input-has-clear input {
+	padding-right: 0;
+	padding-left: .4em;
+}
 /* Search icon */
 .ui-input-search input {
 	padding-left: 1.75em;
+}
+.ui-rtl .ui-input-search input {
+	padding-left: inherit;
+	padding-right: 1.75em;
+}
+.ui-rtl .ui-ltr .ui-input-search input {
+	padding-left: 1.75em;
+	padding-right: inherit;
 }
 .ui-input-search:after {
 	position: absolute;
@@ -83,6 +124,14 @@ textarea.ui-mini {
 	filter: Alpha(Opacity=50);
 	opacity: .5;
 }
+.ui-rtl .ui-input-search:after {
+	left: 0;
+	right: .3125em;
+}
+.ui-rtl .ui-ltr .ui-input-search:after {
+	left: .3125em;
+	right: 0;
+}
 .ui-input-search.ui-input-has-clear .ui-btn.ui-input-clear,
 .ui-input-text.ui-input-has-clear .ui-btn.ui-input-clear {
 	position: absolute;
@@ -91,6 +140,16 @@ textarea.ui-mini {
 	margin: -14px .3125em 0;
 	border: 0;
 	background-color: transparent;
+}
+.ui-rtl .ui-input-search.ui-input-has-clear .ui-btn.ui-input-clear,
+.ui-rtl .ui-input-text.ui-input-has-clear .ui-btn.ui-input-clear {
+	right: auto;
+	left: 0;
+}
+.ui-rtl .ui-ltr .ui-input-search.ui-input-has-clear .ui-btn.ui-input-clear,
+.ui-rtl .ui-ltr .ui-input-text.ui-input-has-clear .ui-btn.ui-input-clear {
+    right: 0;
+    left: auto;
 }
 .ui-input-search .ui-input-clear-hidden,
 .ui-input-text .ui-input-clear-hidden {

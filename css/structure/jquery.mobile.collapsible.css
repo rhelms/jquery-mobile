@@ -17,8 +17,22 @@
 	border-left-width: 0;
 	border-right-width: 0;
 }
+.ui-rtl .ui-collapsible-heading .ui-btn {
+	text-align: right;
+}
+.ui-rtl .ui-ltr .ui-collapsible-heading .ui-btn {
+	text-align: left;
+}
 .ui-collapsible-heading .ui-btn-icon-top,
 .ui-collapsible-heading .ui-btn-icon-bottom {
+	text-align: center;
+}
+.ui-rtl .ui-collapsible-heading .ui-btn-icon-top,
+.ui-rtl .ui-collapsible-heading .ui-btn-icon-bottom {
+	text-align: center;
+}
+.ui-rtl .ui-ltr .ui-collapsible-heading .ui-btn-icon-top,
+.ui-rtl .ui-ltr .ui-collapsible-heading .ui-btn-icon-bottom {
 	text-align: center;
 }
 .ui-collapsible-inset .ui-collapsible-heading .ui-btn {

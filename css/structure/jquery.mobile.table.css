@@ -11,6 +11,14 @@
 	padding: .4em .5em;
 	vertical-align:top;
 }
+.ui-rtl .ui-table th,
+.ui-rtl .ui-table td {
+	text-align: right;
+}
+.ui-rtl .ui-ltr .ui-table th,
+.ui-rtl .ui-ltr .ui-table td {
+    text-align: left;
+}
 .ui-table th .ui-btn,
 .ui-table td .ui-btn {
 	line-height: normal;
@@ -22,4 +30,10 @@
 	text-align: left;
 	margin-bottom: 1.4em;
 	opacity: .5;
+}
+.ui-rtl .ui-table caption {
+	text-align: right;
+}
+.ui-rtl .ui-ltr .ui-table caption {
+    text-align: right;
 }

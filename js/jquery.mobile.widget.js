@@ -7,7 +7,8 @@
 define( [ "jquery",
 	"./jquery.mobile.ns",
 	"jquery-ui/jquery.ui.widget",
-	"./jquery.mobile.data" ], function( jQuery ) {
+	"./jquery.mobile.data",
+    "./jquery.mobile.helpers" ], function( jQuery ) {
 //>>excludeEnd("jqmBuildExclude");
 (function( $, undefined ) {
 
@@ -34,6 +35,11 @@ $.extend( $.Widget.prototype, {
 		}
 
 		return options;
+	},
+
+	isRtl: function() {
+		var elem = this.element[ 0 ];
+		return $.isRtl( elem );
 	}
 });
 

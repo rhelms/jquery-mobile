@@ -35,6 +35,18 @@
 		width: 20%;
 		margin: .5em 2% 0 0;
 	}
+	.ui-rtl .ui-field-contain > label,
+	.ui-rtl .ui-field-contain .ui-controlgroup-label,
+	.ui-rtl .ui-field-contain > .ui-rangeslider > label {
+		float: right;
+		margin: .5em 0 0 2%;
+	}
+	.ui-rtl .ui-ltr .ui-field-contain > label,
+	.ui-rtl .ui-ltr .ui-field-contain .ui-controlgroup-label,
+	.ui-rtl .ui-ltr .ui-field-contain > .ui-rangeslider > label {
+		float: left;
+		margin: .5em 2% 0 0;
+	}
 	.ui-popup .ui-field-contain > label,
 	.ui-popup .ui-field-contain .ui-controlgroup-label,
 	.ui-popup .ui-field-contain > .ui-rangeslider > label {
@@ -50,6 +62,14 @@
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
+	.ui-rtl .ui-field-contain > label ~ [class*="ui-"],
+	.ui-rtl .ui-field-contain .ui-controlgroup-controls {
+		float: right;
+	}
+	.ui-rtl .ui-ltr .ui-field-contain > label ~ [class*="ui-"],
+	.ui-rtl .ui-ltr .ui-field-contain .ui-controlgroup-controls {
+		float: left;
+	}
 	/* ui-hide-label deprecated in 1.4. TODO: Remove in 1.5 */
 	.ui-hide-label > label ~ [class*="ui-"],
 	.ui-hide-label .ui-controlgroup-controls,
@@ -61,6 +81,14 @@
 	.ui-field-contain > label ~ .ui-btn-inline {
 		width: auto;
 		margin-right: .625em;
+	}
+	.ui-rtl .ui-field-contain > label ~ .ui-btn-inline {
+		margin-right: 0;
+		margin-left: .625em;
+	}
+	.ui-rtl .ui-ltr .ui-field-contain > label ~ .ui-btn-inline {
+		margin-right: .625em;
+		margin-left: 0;
 	}
 	.ui-field-contain > label ~ .ui-btn-inline.ui-btn-icon-notext {
 		width: 1.75em;

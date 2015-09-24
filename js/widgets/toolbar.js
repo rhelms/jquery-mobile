@@ -104,19 +104,32 @@ define( [
 
 			this.rightbtn = headerAnchors.hasClass( "ui-btn-right" );
 
-			// Filter out right buttons and back buttons
-			this.leftbtn = this.leftbtn ||
-				headerAnchors.eq( 0 )
-					.not( ".ui-btn-right,.ui-toolbar-back-btn" )
-					.addClass( "ui-btn-left" )
-					.length;
+			if ( this.isRtl() ) {
+				// Filter out right buttons and back buttons
+				this.rightbtn = this.rightbtn ||
+					headerAnchors.eq(0)
+						.not(".ui-btn-left,.ui-toolbar-back-btn")
+						.addClass("ui-btn-right")
+						.length;
 
-			this.rightbtn = this.rightbtn || headerAnchors.eq( 1 ).addClass( "ui-btn-right" ).length;
+				this.leftbtn = this.leftbtn || headerAnchors.eq(1).addClass("ui-btn-left").length;
+			} else {
+				// Filter out right buttons and back buttons
+				this.leftbtn = this.leftbtn ||
+					headerAnchors.eq(0)
+						.not(".ui-btn-right,.ui-toolbar-back-btn")
+						.addClass("ui-btn-left")
+						.length;
+
+				this.rightbtn = this.rightbtn || headerAnchors.eq(1).addClass("ui-btn-right").length;
+			}
 		},
 		_updateBackButton: function() {
 			var backButton,
 				options = this.options,
-				theme = options.backBtnTheme || options.theme;
+				theme = options.backBtnTheme || options.theme,
+                btnClassSuffix = "left",
+                iconCaratSuffix = "l";
 
 			// Retrieve the back button or create a new, empty one
 			backButton = this._backButton = ( this._backButton || {} );
@@ -145,11 +158,15 @@ define( [
 
 				// Skip back button creation if one is already present
 				if ( !backButton.attached ) {
+					if ( this.isRtl() ) {
+						btnClassSuffix = "right";
+						iconCaratSuffix = "r";
+					}
 					this.backButton = backButton.element = ( backButton.element ||
 						$( "<a role='button' href='javascript:void(0);' " +
-							"class='ui-btn ui-corner-all ui-shadow ui-btn-left " +
+							"class='ui-btn ui-corner-all ui-shadow ui-btn-" + btnClassSuffix + " " +
 								( theme ? "ui-btn-" + theme + " " : "" ) +
-								"ui-toolbar-back-btn ui-icon-carat-l ui-btn-icon-left' " +
+								"ui-toolbar-back-btn ui-icon-carat-" + iconCaratSuffix + " ui-btn-icon-" + btnClassSuffix + "' " +
 							"data-" + $.mobile.ns + "rel='back'>" + options.backBtnText +
 							"</a>" ) )
 							.prependTo( this.element );

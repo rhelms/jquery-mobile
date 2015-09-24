@@ -40,7 +40,18 @@ $.mobile.behaviors.addFirstLastClasses = {
 
 	_addFirstLastClasses: function( $els, $visibles, create ) {
 		$els.removeClass( "ui-first-child ui-last-child" );
-		$visibles.eq( 0 ).addClass( "ui-first-child" ).end().last().addClass( "ui-last-child" );
+		var firstChildClass = "ui-first-child", lastChildClass = "ui-last-child";
+		// For RTL, swap first and last child classes, with the exception of vertical control groups and listviews
+		if ( $.isRtl( $visibles.eq( 0 ) ) &&
+			(!(
+			$visibles.eq( 0 ).closest( ".ui-controlgroup" ).hasClass( "ui-controlgroup-vertical" ) ||
+			$visibles.eq( 0 ).parent().hasClass( "ui-listview" ) ||
+			$visibles.eq( 0 ).parent().hasClass( "ui-collapsible-set" )
+			))) {
+			firstChildClass = "ui-last-child";
+			lastChildClass = "ui-first-child";
+		}
+		$visibles.eq( 0 ).addClass( firstChildClass ).end().last().addClass( lastChildClass );
 		if ( !create ) {
 			this.element.trigger( "updatelayout" );
 		}

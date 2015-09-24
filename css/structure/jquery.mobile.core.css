@@ -73,6 +73,16 @@ div.ui-mobile-viewport {
 	visibility: hidden;
 }
 
+.ui-rtl {
+	direction: rtl;
+	text-align: right;
+}
+
+.ui-ltr {
+	direction: ltr;
+	text-align: left;
+}
+
 /* Non-js content hiding */
 .ui-nojs {
 	position: absolute !important;
@@ -103,6 +113,10 @@ div.ui-mobile-viewport {
 	margin-left: -1.4375em;
 	margin-top: -1.4375em;
 }
+.ui-rtl .ui-load-default {
+	margin-left: 0;
+	margin-right: -1.4375em;
+}
 .ui-loader-verbose {
 	width: 12.5em;
 	filter: Alpha(Opacity=88);
@@ -112,6 +126,10 @@ div.ui-mobile-viewport {
 	margin-left: -6.875em;
 	margin-top: -2.6875em;
 	padding: .625em;
+}
+.ui-rtl .ui-loader-verbose {
+	margin-left: 0;
+	margin-right: -6.875em;
 }
 .ui-loader-default h1 {
 	font-size: 0;
@@ -142,6 +160,10 @@ div.ui-mobile-viewport {
 .ui-loader-textonly {
 	padding: .9375em;
 	margin-left: -7.1875em;
+}
+.ui-rtl .ui-loader-textonly {
+	margin-left: 0;
+	margin-right: -7.1875em;
 }
 .ui-loader-textonly .ui-icon-loading {
 	display: none;
@@ -193,6 +215,10 @@ div.ui-mobile-viewport {
 	white-space: nowrap;
 	outline: 0 !important;
 }
+.ui-rtl .ui-header .ui-title,
+.ui-rtl .ui-footer .ui-title {
+	text-overflow: clip;
+}
 .ui-footer .ui-title {
 	margin: 0 1em;
 }
@@ -237,6 +263,9 @@ div.ui-mobile-viewport {
 	-ms-user-select: none;
 	user-select: none;
 }
+.ui-rtl .ui-btn {
+	text-overflow: clip;
+}
 .ui-btn-icon-notext,
 .ui-header button.ui-btn.ui-btn-icon-notext,
 .ui-footer button.ui-btn.ui-btn-icon-notext {
@@ -266,7 +295,9 @@ div.ui-mobile-viewport {
 
 /* To ensure same top and left/right position when ui-btn-left/right are added to something other than buttons. */
 .ui-header .ui-btn-left,
-.ui-header .ui-btn-right {
+.ui-header .ui-btn-right,
+.ui-header .ui-btn-start,
+.ui-header .ui-btn-end {
 	font-size: 12.5px;
 }
 .ui-mini.ui-btn-icon-notext,
@@ -281,11 +312,33 @@ div.ui-mobile-viewport {
 	vertical-align: middle;
 	margin-right: .625em;
 }
-.ui-btn-icon-left {
+.ui-rtl .ui-btn-inline {
+	margin-right: 0;
+	margin-left: .625em;
+}
+.ui-btn-icon-left,
+.ui-btn-icon-start {
 	padding-left: 2.5em;
 }
-.ui-btn-icon-right {
+.ui-rtl .ui-btn-icon-start {
+    padding-right: 2.5em;
+    padding-left: 1em;
+}
+.ui-rtl .ui-ltr .ui-btn-icon-start {
+    padding-left: 2.5em;
+    padding-right: 1em;
+}
+.ui-btn-icon-right,
+.ui-btn-icon-end {
 	padding-right: 2.5em;
+}
+.ui-rtl .ui-btn-icon-end {
+    padding-left: 2.5em;
+    padding-right: 1em;
+}
+.ui-rtl .ui-ltr .ui-btn-icon-end {
+    padding-right: 2.5em;
+    padding-left: 1em;
 }
 .ui-btn-icon-top {
 	padding-top: 2.5em;
@@ -302,6 +355,8 @@ div.ui-mobile-viewport {
 }
 .ui-btn-icon-left:after,
 .ui-btn-icon-right:after,
+.ui-btn-icon-start:after,
+.ui-btn-icon-end:after,
 .ui-btn-icon-top:after,
 .ui-btn-icon-bottom:after,
 .ui-btn-icon-notext:after {
@@ -313,33 +368,105 @@ div.ui-mobile-viewport {
 }
 .ui-btn-icon-notext:after,
 .ui-btn-icon-left:after,
-.ui-btn-icon-right:after {
+.ui-btn-icon-right:after,
+.ui-btn-icon-start:after,
+.ui-btn-icon-end:after {
 	top: 50%;
 	margin-top: -11px;
 }
-.ui-btn-icon-left:after {
+.ui-btn-icon-left:after,
+.ui-btn-icon-start:after {
 	left: .5625em;
 }
-.ui-btn-icon-right:after {
+.ui-rtl .ui-btn-icon-start:after {
+    right: .5625em;
+    left: auto;
+}
+.ui-rtl .ui-ltr .ui-btn-icon-start:after {
+    left: .5625em;
+    right: auto;
+}
+.ui-btn-icon-right:after,
+.ui-btn-icon-end:after {
 	right: .5625em;
+}
+.ui-rtl .ui-btn-icon-end:after {
+    left: .5625em;
+    right: auto;
+}
+.ui-rtl .ui-ltr .ui-btn-icon-end:after {
+    right: .5625em;
+    left: auto;
 }
 .ui-mini.ui-btn-icon-left:after,
 .ui-mini .ui-btn-icon-left:after,
 .ui-header .ui-btn-icon-left:after,
-.ui-footer .ui-btn-icon-left:after {
+.ui-footer .ui-btn-icon-left:after,
+.ui-mini.ui-btn-icon-start:after,
+.ui-mini .ui-btn-icon-start:after,
+.ui-header .ui-btn-icon-start:after,
+.ui-footer .ui-btn-icon-start:after {
 	left: .37em;
+}
+.ui-rtl .ui-mini.ui-btn-icon-start:after,
+.ui-rtl .ui-mini .ui-btn-icon-start:after,
+.ui-rtl .ui-header .ui-btn-icon-start:after,
+.ui-rtl .ui-footer .ui-btn-icon-start:after {
+    right: .37em;
+    left: auto;
+}
+.ui-rtl .ui-ltr .ui-mini.ui-btn-icon-start:after,
+.ui-rtl .ui-ltr .ui-mini .ui-btn-icon-start:after,
+.ui-rtl .ui-ltr .ui-header .ui-btn-icon-start:after,
+.ui-rtl .ui-ltr .ui-footer .ui-btn-icon-start:after {
+    left: .37em;
+    right: auto;
 }
 .ui-mini.ui-btn-icon-right:after,
 .ui-mini .ui-btn-icon-right:after,
 .ui-header .ui-btn-icon-right:after,
-.ui-footer .ui-btn-icon-right:after {
+.ui-footer .ui-btn-icon-right:after,
+.ui-mini.ui-btn-icon-end:after,
+.ui-mini .ui-btn-icon-end:after,
+.ui-header .ui-btn-icon-end:after,
+.ui-footer .ui-btn-icon-end:after {
 	right: .37em;
+}
+.ui-rtl .ui-mini.ui-btn-icon-end:after,
+.ui-rtl .ui-mini .ui-btn-icon-end:after,
+.ui-rtl .ui-header .ui-btn-icon-end:after,
+.ui-rtl .ui-footer .ui-btn-icon-end:after {
+    left: .37em;
+    right: auto;
+}
+.ui-rtl .ui-ltr .ui-mini.ui-btn-icon-end:after,
+.ui-rtl .ui-ltr .ui-mini .ui-btn-icon-end:after,
+.ui-rtl .ui-ltr .ui-header .ui-btn-icon-end:after,
+.ui-rtl .ui-ltr .ui-footer .ui-btn-icon-end:after {
+    right: .37em;
+    left: auto;
 }
 .ui-btn-icon-notext:after,
 .ui-btn-icon-top:after,
 .ui-btn-icon-bottom:after {
 	left: 50%;
 	margin-left: -11px;
+}
+.ui-rtl .ui-btn-icon-notext:after,
+.ui-rtl .ui-btn-icon-top:after,
+.ui-rtl .ui-btn-icon-bottom:after {
+	left: 0;
+	right: 50%;
+	margin-left: 0;
+	margin-right: -11px;
+}
+.ui-rtl .ui-ltr .ui-btn-icon-notext:after,
+.ui-rtl .ui-ltr .ui-btn-icon-top:after,
+.ui-rtl .ui-ltr .ui-btn-icon-bottom:after {
+	left: 50%;
+	right: 0;
+	margin-left: -11px;
+	margin-right: 0;
 }
 .ui-btn-icon-top:after {
 	top: .5625em;
@@ -352,27 +479,69 @@ div.ui-mobile-viewport {
 .ui-header .ui-btn-left,
 .ui-header .ui-btn-right,
 .ui-btn-left > [class*="ui-"],
-.ui-btn-right > [class*="ui-"] {
+.ui-btn-right > [class*="ui-"],
+.ui-header .ui-btn-start,
+.ui-header .ui-btn-end,
+.ui-btn-start > [class*="ui-"],
+.ui-btn-end > [class*="ui-"]{
 	margin: 0;
 }
 .ui-btn-left,
-.ui-btn-right {
+.ui-btn-right,
+.ui-btn-start,
+.ui-btn-end {
 	position: absolute;
 	top: .24em;
 }
-.ui-btn-left {
+.ui-btn-left,
+.ui-btn-start {
 	left: .4em;
 }
-.ui-btn-right {
+.ui-rtl .ui-btn-start {
+    right: .4em;
+    left: auto;
+}
+.ui-rtl .ui-ltr .ui-btn-start {
+    left: .4em;
+    right: auto;
+}
+.ui-btn-right,
+.ui-btn-end {
 	right: .4em;
 }
-.ui-btn-icon-notext.ui-btn-left {
+.ui-rtl .ui-btn-end {
+    left: .4em;
+    right: auto;
+}
+.ui-rtl .ui-ltr .ui-btn-end {
+    right: .4em;
+    left: auto;
+}
+.ui-btn-icon-notext.ui-btn-left,
+.ui-btn-icon-notext.ui-btn-start {
 	top: .3125em;
 	left: .3125em;
 }
-.ui-btn-icon-notext.ui-btn-right {
+.ui-rtl .ui-btn-icon-notext.ui-btn-start {
+    right: .3125em;
+    left: auto;
+}
+.ui-rtl .ui-ltr .ui-btn-icon-notext.ui-btn-start {
+    left: .3125em;
+    right: auto;
+}
+.ui-btn-icon-notext.ui-btn-right,
+.ui-btn-icon-notext.ui-btn-end {
 	top: .3125em;
 	right: .3125em;
+}
+.ui-rtl .ui-btn-icon-notext.ui-btn-end {
+    left: .3125em;
+    right: auto;
+}
+.ui-rtl .ui-ltr .ui-btn-icon-notext.ui-btn-end {
+    right: .3125em;
+    left: auto;
 }
 
 /* Button elements */

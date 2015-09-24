@@ -19,6 +19,10 @@
 		text-align: left;
 		display: block;
 	}
+	.ui-rtl .ui-table-reflow td,
+	.ui-rtl .ui-table-reflow th {
+		text-align: right;
+	}
 	/* Add a fair amount of top margin to visually separate each row when stacked */  
 	.ui-table-reflow tbody th {
 		margin-top: 3em;
@@ -30,6 +34,10 @@
 		min-width: 30%; 
 		display: inline-block;
 		margin: -.4em 1em -.4em -.4em;
+	}
+	.ui-rtl .ui-table-reflow td .ui-table-cell-label,
+	.ui-rtl .ui-table-reflow th .ui-table-cell-label {
+		margin: -.4em -.4em -.4em 1em;
 	}
 	/* For grouped headers, have a different style to visually separate the levels by classing the first label in each col group */ 
 	.ui-table-reflow th .ui-table-cell-label-top,
@@ -77,6 +85,11 @@
 		box-sizing: border-box;
 		float: left;
 		clear: left;
+	}
+	.ui-rtl .ui-table-reflow.ui-responsive td,
+	.ui-rtl .ui-table-reflow.ui-responsive th {
+		float: right;
+		clear: right;
 	}
 }
 

@@ -5,7 +5,9 @@
 //>>css.structure: ../css/structure/jquery.mobile.core.css
 //>>css.theme: ../css/themes/default/jquery.mobile.theme.css
 
-define( [ "jquery", "./jquery.mobile.core" ], function( jQuery ) {
+define( [ "jquery",
+    "./jquery.mobile.core",
+    "./jquery.mobile.helpers" ], function( jQuery ) {
 //>>excludeEnd("jqmBuildExclude");
 
 // buttonMarkup is deprecated as of 1.4.0 and will be removed in 1.5.0.
@@ -230,7 +232,7 @@ $.fn.buttonMarkup = function( options, overwriteClasses ) {
 
 				// The defaults form the basis
 				defaults,
-
+				
 				// Add the computed options
 				retrievedOptions
 			),
@@ -249,7 +251,7 @@ $.fn.buttonMarkup = function( options, overwriteClasses ) {
 // given here for all recognized options
 $.fn.buttonMarkup.defaults = {
 	icon: "",
-	iconpos: "left",
+	iconpos: "start",
 	theme: null,
 	inline: false,
 	shadow: true,

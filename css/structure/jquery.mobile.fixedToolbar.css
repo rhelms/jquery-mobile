@@ -16,11 +16,15 @@
 	padding-top: 0;
 }
 .ui-header-fixed .ui-btn-left,
-.ui-header-fixed .ui-btn-right {
+.ui-header-fixed .ui-btn-right,
+.ui-header-fixed .ui-btn-start,
+.ui-header-fixed .ui-btn-end {
 	margin-top: 1px;
 }
 .ui-header-fixed.ui-fixed-hidden .ui-btn-left,
-.ui-header-fixed.ui-fixed-hidden .ui-btn-right {
+.ui-header-fixed.ui-fixed-hidden .ui-btn-right,
+.ui-header-fixed.ui-fixed-hidden .ui-btn-start,
+.ui-header-fixed.ui-fixed-hidden .ui-btn-end {
 	margin-top: 0;
 }
 .ui-footer-fixed {

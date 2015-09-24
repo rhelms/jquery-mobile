@@ -20,6 +20,20 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+.ui-rtl .ui-block-a,
+.ui-rtl .ui-block-b,
+.ui-rtl .ui-block-c,
+.ui-rtl .ui-block-d,
+.ui-rtl .ui-block-e {
+	float: right;
+}
+.ui-rtl .ui-ltr .ui-block-a,
+.ui-rtl .ui-ltr .ui-block-b,
+.ui-rtl .ui-ltr .ui-block-c,
+.ui-rtl .ui-ltr .ui-block-d,
+.ui-rtl .ui-ltr .ui-block-e {
+	float: left;
+}
 /* force new row */
 .ui-block-a {
 	clear: left;

@@ -47,6 +47,20 @@ fieldset.ui-controlgroup {
 	float: left;
 	clear: none;
 }
+.ui-rtl .ui-controlgroup-horizontal .ui-controlgroup-controls > .ui-btn,
+.ui-rtl .ui-controlgroup-horizontal .ui-controlgroup-controls li > .ui-btn,
+.ui-rtl .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-checkbox,
+.ui-rtl .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-radio,
+.ui-rtl .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-select {
+	float: right;
+}
+.ui-rtl .ui-ltr .ui-controlgroup-horizontal .ui-controlgroup-controls > .ui-btn,
+.ui-rtl .ui-ltr .ui-controlgroup-horizontal .ui-controlgroup-controls li > .ui-btn,
+.ui-rtl .ui-ltr .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-checkbox,
+.ui-rtl .ui-ltr .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-radio,
+.ui-rtl .ui-ltr .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-select {
+	float: left;
+}
 .ui-controlgroup-horizontal .ui-controlgroup-controls button.ui-btn,
 .ui-controlgroup-controls .ui-btn-icon-notext {
 	width: auto;
@@ -68,8 +82,15 @@ fieldset.ui-controlgroup {
 .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn {
 	border-right-width: 0;
 }
+.ui-rtl :not(.ui-ltr) .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn {
+	border-right-width: 1px;
+	border-left-width: 0;
+}
 .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn.ui-last-child {
 	border-right-width: 1px;
+}
+.ui-rtl :not(.ui-ltr) .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn.ui-first-child {
+	border-left-width: 1px;
 }
 .ui-controlgroup-controls .ui-btn-corner-all,
 .ui-controlgroup-controls .ui-btn.ui-corner-all {
